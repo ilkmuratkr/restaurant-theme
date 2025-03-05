@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lezzet Bonus | Restoran & Cafe</title>
+    <style>
+        :root {
+            --primary-color: #ff4d4d;
+            --secondary-color: #333;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --border-color: #eee;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .bonus-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .bonus-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .bonus-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .bonus-content {
+            padding: 20px;
+        }
+
+        .bonus-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .menu-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .menu-category {
+            margin-bottom: 30px;
+        }
+
+        .menu-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item span:last-child {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .contact-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .contact-item span {
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 60px 20px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .bonus-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Lezzet Bonus</h1>
+        <p>Eşsiz lezzetler ve kazançlı bonuslar için doğru adres</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2 class="section-title">Bonus Fırsatları</h2>
+            <div class="bonus-cards">
+                <div class="bonus-card">
+                    <img class="bonus-image" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500" alt="İlk Sipariş Bonusu">
+                    <div class="bonus-content">
+                        <h3>İlk Sipariş Bonusu</h3>
+                        <p>İlk siparişinizde %20 bonus puan kazanın! Hemen üye olun ve bu özel fırsatı kaçırmayın.</p>
+                    </div>
+                </div>
+
+                <div class="bonus-card">
+                    <img class="bonus-image" src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=500" alt="Hafta Sonu Bonusu">
+                    <div class="bonus-content">
+                        <h3>Hafta Sonu Bonusu</h3>
+                        <p>Cumartesi ve Pazar günleri tüm siparişlerinizde %15 ekstra puan kazanma fırsatı!</p>
+                    </div>
+                </div>
+
+                <div class="bonus-card">
+                    <img class="bonus-image" src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500" alt="Kahve Bonusu">
+                    <div class="bonus-content">
+                        <h3>Kahve Bonusu</h3>
+                        <p>Her 5 kahve siparişinizde 1 kahve hediye! Kahve keyfinizi ikiye katlayın.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Menümüz</h2>
+            <div class="menu-section">
+                <div class="menu-category">
+                    <h3>Ana Yemekler</h3>
+                    <div class="menu-item">
+                        <span>Izgara Köfte</span>
+                        <span>120 ₺</span>
+                    </div>
+                    <div class="menu-item">
+                        <span>Tavuk Şiş</span>
+                        <span>100 ₺</span>
+                    </div>
+                    <div class="menu-item">
+                        <span>Karışık Izgara</span>
+                        <span>150 ₺</span>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Tatlılar</h3>
+                    <div class="menu-item">
+                        <span>Künefe</span>
+                        <span>80 ₺</span>
+                    </div>
+                    <div class="menu-item">
+                        <span>Sütlaç</span>
+                        <span>50 ₺</span>
+                    </div>
+                    <div class="menu-item">
+                        <span>Baklava</span>
+                        <span>70 ₺</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">İletişim</h2>
+            <div class="contact-section">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <p>Lezzet Sokak No:123, İstanbul</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <p>+90 212 345 67 89</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <p>info@lezzetbonus.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <span>⏰</span>
+                        <p>Her gün 09:00 - 23:00</p>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.2755075277!2d28.97762!3d41.037128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDAyJzEzLjciTiAyOMKwNTgnMzkuNCJF!5e0!3m2!1str!2str!4v1625136體"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html> 
