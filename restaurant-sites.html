@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme-id="restaurant-bonus" data-theme-name="Lezzet Bonus Teması" style="width: 100%; height: 100%; margin: 0; padding: 0;">
+<html style="width: 100vw; height: 100vh; margin: 0; padding: 0; overflow-x: hidden;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -8,62 +8,44 @@
     <meta name="theme-version" content="1.0">
     <meta name="theme-author" content="Lezzet Bonus">
     <meta name="theme-description" content="Restoran ve kafeler için özel tasarlanmış modern ve şık tema">
-    <title>Lezzet Bonus Restaurant Teması</title>
+    <title>Lezzet Bonus Restaurant</title>
     <link rel="canonical" href="https://sites.google.com/view/restaurant-bonus-theme">
-    <style type="text/css" id="theme-styles">
-        html, body {
-            width: 100% !important;
-            height: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            overflow-x: hidden !important;
-        }
-
-        body {
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-        }
-
-        /* Google Sites Tema Değişkenleri */
-        :root {
-            --theme-primary: var(--google-sites-theme-primary, #ff6b6b);
-            --theme-secondary: var(--google-sites-theme-secondary, #4ecdc4);
-            --theme-background: var(--google-sites-theme-background, #f9f9f9);
-            --theme-text: var(--google-sites-theme-text, #333);
-            --theme-border: var(--google-sites-theme-border, #eee);
-            --theme-shadow: var(--google-sites-theme-shadow, 0 4px 6px rgba(0,0,0,0.1));
-            --theme-font-family: var(--google-sites-theme-font-family, 'Google Sans', 'Roboto', sans-serif);
-        }
-
-        /* Tema Ayarları */
-        [data-theme-id="restaurant-bonus"] {
-            --header-height: 60vh;
-            --section-padding: 4rem;
-            --card-border-radius: 1rem;
-        }
-
-        /* Temel Stiller */
+    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: var(--theme-font-family);
-            line-height: 1.6;
-            color: var(--theme-text);
-            background: var(--theme-background);
-            -webkit-font-smoothing: antialiased;
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
 
-        /* Google Sites Header */
+        body {
+            font-family: 'Google Sans', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f9f9f9;
+        }
+
+        .container {
+            width: 100vw;
+            min-height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
         .sites-header {
-            position: relative;
-            height: var(--header-height);
+            width: 100vw;
+            height: 60vh;
             min-height: 400px;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                         url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200') center/cover;
@@ -73,6 +55,7 @@
             text-align: center;
             padding: 2rem;
             color: white;
+            position: relative;
         }
 
         .sites-header-content {
@@ -92,7 +75,6 @@
             opacity: 0.9;
         }
 
-        /* İçerik Bölümleri */
         .sites-section {
             padding: var(--section-padding);
             max-width: 1200px;
@@ -117,7 +99,6 @@
             border-radius: 2px;
         }
 
-        /* Kart Grid Sistemi */
         .sites-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -153,7 +134,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Menü Stilleri */
         .sites-menu {
             background: white;
             border-radius: var(--card-border-radius);
@@ -191,7 +171,6 @@
             font-size: 1.1rem;
         }
 
-        /* İletişim Bölümü */
         .sites-contact {
             background: white;
             border-radius: var(--card-border-radius);
@@ -216,7 +195,6 @@
             color: var(--theme-primary);
         }
 
-        /* Mobil Uyumluluk */
         @media screen and (max-width: 768px) {
             .sites-header {
                 min-height: 300px;
@@ -239,45 +217,50 @@
             }
         }
     </style>
-    <script type="text/javascript">
-        window.onload = function() {
-            // Google Sites'ta iframe içinde tam sayfa görüntüleme için
-            if (window.parent && window.parent !== window) {
-                window.parent.document.body.style.margin = '0';
-                window.parent.document.body.style.padding = '0';
-                window.parent.document.body.style.overflow = 'hidden';
-                
-                var iframe = window.parent.document.querySelector('iframe');
-                if (iframe) {
-                    iframe.style.width = '100vw';
-                    iframe.style.height = '100vh';
-                    iframe.style.border = 'none';
-                    iframe.style.position = 'fixed';
-                    iframe.style.top = '0';
-                    iframe.style.left = '0';
-                    iframe.style.right = '0';
-                    iframe.style.bottom = '0';
-                    iframe.style.zIndex = '9999';
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tam ekran modu için
+            function requestFullScreen() {
+                var element = document.documentElement;
+                if (element.requestFullscreen) {
+                    element.requestFullscreen();
+                } else if (element.mozRequestFullScreen) {
+                    element.mozRequestFullScreen();
+                } else if (element.webkitRequestFullscreen) {
+                    element.webkitRequestFullscreen();
+                } else if (element.msRequestFullscreen) {
+                    element.msRequestFullscreen();
                 }
             }
 
-            // Sayfanın yüksekliğini otomatik ayarlama
-            function updateHeight() {
-                var height = document.documentElement.scrollHeight;
-                window.parent.postMessage({ type: 'resize', height: height }, '*');
+            // Sayfayı yeniden boyutlandırma
+            function resizePage() {
+                document.body.style.width = window.innerWidth + 'px';
+                document.body.style.height = window.innerHeight + 'px';
+                
+                // Google Sites'a yüksekliği bildir
+                if (window.parent) {
+                    window.parent.postMessage({
+                        type: 'resize',
+                        height: document.documentElement.scrollHeight
+                    }, '*');
+                }
             }
 
-            // Sayfa yüklendiğinde ve içerik değiştiğinde yüksekliği güncelle
-            window.addEventListener('load', updateHeight);
-            window.addEventListener('resize', updateHeight);
+            // Event listeners
+            window.addEventListener('load', resizePage);
+            window.addEventListener('resize', resizePage);
             
-            // Her 500ms'de bir yüksekliği kontrol et
-            setInterval(updateHeight, 500);
-        };
+            // Her 100ms'de bir boyutu kontrol et
+            setInterval(resizePage, 100);
+
+            // Sayfa yüklendiğinde tam ekran yap
+            document.querySelector('.sites-header').addEventListener('click', requestFullScreen);
+        });
     </script>
 </head>
-<body style="width: 100%; height: 100%; margin: 0; padding: 0; overflow-x: hidden;">
-    <div style="width: 100%; min-height: 100vh;">
+<body>
+    <div class="container">
         <header class="sites-header">
             <div class="sites-header-content">
                 <h1>Lezzet Bonus</h1>
