@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Galerisi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --success-color: #28a745;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .banner-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .banner-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .banner-image-container {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .banner-card:hover .banner-image {
+            transform: scale(1.05);
+        }
+
+        .banner-content {
+            padding: 1.5rem;
+        }
+
+        .banner-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .banner-description {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .banner-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+
+        .banner-stats {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .banner-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .banner-button:hover {
+            background: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .banner-card {
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="text-center">Banner Galerisi</h1>
+            <p class="text-center mb-0">En Popüler Banner Koleksiyonu</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <!-- Banner 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="banner-card">
+                    <div class="banner-image-container">
+                        <img src="https://source.unsplash.com/800x600/?nature" alt="Doğa" class="banner-image">
+                    </div>
+                    <div class="banner-content">
+                        <h3 class="banner-title">Doğa Manzarası</h3>
+                        <p class="banner-description">Muhteşem doğa manzaraları ve huzur dolu anlar</p>
+                    </div>
+                    <div class="banner-footer">
+                        <div class="banner-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-eye"></i>
+                                1.2K
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                450
+                            </span>
+                        </div>
+                        <button class="banner-button">İncele</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="banner-card">
+                    <div class="banner-image-container">
+                        <img src="https://source.unsplash.com/800x600/?city" alt="Şehir" class="banner-image">
+                    </div>
+                    <div class="banner-content">
+                        <h3 class="banner-title">Şehir Yaşamı</h3>
+                        <p class="banner-description">Modern şehir yaşamının dinamik atmosferi</p>
+                    </div>
+                    <div class="banner-footer">
+                        <div class="banner-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-eye"></i>
+                                980
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                320
+                            </span>
+                        </div>
+                        <button class="banner-button">İncele</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="banner-card">
+                    <div class="banner-image-container">
+                        <img src="https://source.unsplash.com/800x600/?technology" alt="Teknoloji" class="banner-image">
+                    </div>
+                    <div class="banner-content">
+                        <h3 class="banner-title">Teknoloji Dünyası</h3>
+                        <p class="banner-description">En son teknoloji trendleri ve yenilikler</p>
+                    </div>
+                    <div class="banner-footer">
+                        <div class="banner-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-eye"></i>
+                                1.5K
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                580
+                            </span>
+                        </div>
+                        <button class="banner-button">İncele</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="banner-card">
+                    <div class="banner-image-container">
+                        <img src="https://source.unsplash.com/800x600/?business" alt="İş Dünyası" class="banner-image">
+                    </div>
+                    <div class="banner-content">
+                        <h3 class="banner-title">İş Dünyası</h3>
+                        <p class="banner-description">Profesyonel iş yaşamı ve başarı hikayeleri</p>
+                    </div>
+                    <div class="banner-footer">
+                        <div class="banner-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-eye"></i>
+                                890
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                290
+                            </span>
+                        </div>
+                        <button class="banner-button">İncele</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner 5 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="banner-card">
+                    <div class="banner-image-container">
+                        <img src="https://source.unsplash.com/800x600/?sport" alt="Spor" class="banner-image">
+                    </div>
+                    <div class="banner-content">
+                        <h3 class="banner-title">Spor ve Sağlık</h3>
+                        <p class="banner-description">Sağlıklı yaşam ve spor aktiviteleri</p>
+                    </div>
+                    <div class="banner-footer">
+                        <div class="banner-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-eye"></i>
+                                1.1K
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                420
+                            </span>
+                        </div>
+                        <button class="banner-button">İncele</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner 6 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="banner-card">
+                    <div class="banner-image-container">
+                        <img src="https://source.unsplash.com/800x600/?art" alt="Sanat" class="banner-image">
+                    </div>
+                    <div class="banner-content">
+                        <h3 class="banner-title">Sanat ve Kültür</h3>
+                        <p class="banner-description">Sanatsal etkinlikler ve kültürel değerler</p>
+                    </div>
+                    <div class="banner-footer">
+                        <div class="banner-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-eye"></i>
+                                950
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                310
+                            </span>
+                        </div>
+                        <button class="banner-button">İncele</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner 7 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="banner-card">
+                    <div class="banner-image-container">
+                        <img src="https://source.unsplash.com/800x600/?education" alt="Eğitim" class="banner-image">
+                    </div>
+                    <div class="banner-content">
+                        <h3 class="banner-title">Eğitim</h3>
+                        <p class="banner-description">Öğrenme ve kişisel gelişim fırsatları</p>
+                    </div>
+                    <div class="banner-footer">
+                        <div class="banner-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-eye"></i>
+                                870
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                280
+                            </span>
+                        </div>
+                        <button class="banner-button">İncele</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner 8 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="banner-card">
+                    <div class="banner-image-container">
+                        <img src="https://source.unsplash.com/800x600/?food" alt="Yemek" class="banner-image">
+                    </div>
+                    <div class="banner-content">
+                        <h3 class="banner-title">Yemek Sanatı</h3>
+                        <p class="banner-description">Lezzetli tarifler ve gastronomi dünyası</p>
+                    </div>
+                    <div class="banner-footer">
+                        <div class="banner-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-eye"></i>
+                                1.3K
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                490
+                            </span>
+                        </div>
+                        <button class="banner-button">İncele</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner 9 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="banner-card">
+                    <div class="banner-image-container">
+                        <img src="https://source.unsplash.com/800x600/?travel" alt="Seyahat" class="banner-image">
+                    </div>
+                    <div class="banner-content">
+                        <h3 class="banner-title">Seyahat</h3>
+                        <p class="banner-description">Dünyayı keşfetme ve gezi rehberi</p>
+                    </div>
+                    <div class="banner-footer">
+                        <div class="banner-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-eye"></i>
+                                1.4K
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                530
+                            </span>
+                        </div>
+                        <button class="banner-button">İncele</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner 10 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="banner-card">
+                    <div class="banner-image-container">
+                        <img src="https://source.unsplash.com/800x600/?music" alt="Müzik" class="banner-image">
+                    </div>
+                    <div class="banner-content">
+                        <h3 class="banner-title">Müzik</h3>
+                        <p class="banner-description">Müzik dünyası ve sanatsal performanslar</p>
+                    </div>
+                    <div class="banner-footer">
+                        <div class="banner-stats">
+                            <span class="stat-item">
+                                <i class="fas fa-eye"></i>
+                                1.0K
+                            </span>
+                            <span class="stat-item">
+                                <i class="fas fa-heart"></i>
+                                380
+                            </span>
+                        </div>
+                        <button class="banner-button">İncele</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+</html> 
